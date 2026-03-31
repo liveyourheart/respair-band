@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StreamingLinks from '../components/StreamingLinks.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/respair.css';
+---
+
+<BaseLayout
+  title="Respair"
+  description="Respair is an atmospheric emo crust band from Oklahoma City."
+  ogImage="https://respair.band/images/preview.png"
+  ogUrl="https://respair.band/"
+>
+  <img class="logo" src="/images/website-logo.png" />
+  <StreamingLinks
+    links={[
+      { url: 'https://music.apple.com/us/album/demo-2025-ep/1858472615', icon: '/images/apple-logo.png', id: 'apple' },
+      { url: 'https://amomentofrespair.bandcamp.com/album/demo-2025-2', icon: '/images/bandcamp.png' },
+      { url: 'https://www.instagram.com/a_moment_of_respair', icon: '/images/instagram.png' },
+      { url: 'https://open.spotify.com/album/02VUgTNphFEAQ3bsFKbXjH?si=o9cpXsKBQpGzDswLn6Rs0Q', icon: '/images/spotify.png' },
+      { url: 'https://www.youtube.com/watch?v=Ki7e_ppGh44&list=OLAK5uy_kQSh49Otdft_VY4WZcnLhAJBl191pep9A', icon: '/images/youtube.png', id: 'youtube' },
+    ]}
+  />
+  <div class="shows">
+    <h1>SHOWS</h1>
+    <a class="show-link" href="/shows/04182026/">04/18/2026 - OKC - 89th Street</a><br />
+    <a class="show-link" href="/shows/05162026/">05/16/2026 - OKC - Resonant Head</a><br />
+    <h2>Past Shows</h2>
+    <a class="show-link" href="/shows/03292026/">03/29/2026 - OKC - Resonant Head</a><br />
+    <a class="show-link" href="/shows/12072025/">12/07/2025 - OKC - The Pet Shop</a><br />
+    <a class="show-link" href="/shows/08162025/">08/16/2025 - OKC - Hooligan's</a><br />
+  </div>
+
+  <div class="shows">
+    <h1>CONTACT</h1>
+    <ContactForm
+      accessKey="ea1405d3-0166-499a-9525-23b9e3b14187"
+      subject="Respair Contact"
+      redirectUrl="https://respair.band/?success=true"
+    />
+  </div>
+</BaseLayout>
