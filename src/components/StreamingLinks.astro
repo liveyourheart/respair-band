@@ -1,0 +1,15 @@
+---
+interface Props {
+  links: { url: string; icon: string; id?: string }[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="link-container">
+  {links.map((link) => (
+    <a href={link.url}>
+      <img id={link.id} class="link-img" src={link.icon} />
+    </a>
+  ))}
+</div>

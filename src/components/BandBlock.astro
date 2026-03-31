@@ -1,0 +1,18 @@
+---
+interface Props {
+  name: string;
+  links: { label: string; url: string }[];
+  subtitle?: string;
+}
+
+const { name, links, subtitle } = Astro.props;
+---
+
+<h1>{name}</h1>
+{subtitle && <h2>{subtitle}</h2>}
+{links.map((link, i) => (
+  <>
+    <a href={link.url}>{link.label}</a>
+    {i < links.length - 1 && <br />}
+  </>
+))}

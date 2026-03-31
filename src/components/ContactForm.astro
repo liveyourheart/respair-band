@@ -1,0 +1,35 @@
+---
+interface Props {
+  accessKey: string;
+  subject: string;
+  redirectUrl: string;
+}
+const { accessKey, subject, redirectUrl } = Astro.props;
+const TEST_KEY = 'a0577f47-3ba7-48e5-bc28-b262c076a517';
+const activeKey = import.meta.env.DEV ? TEST_KEY : accessKey;
+---
+
+<div id="contact-section">
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={activeKey} />
+    <input type="hidden" name="subject" value={subject} />
+    <input type="hidden" name="redirect" value={redirectUrl} />
+
+    <input class="form-control" type="text" name="name" placeholder="NAME" required />
+    <input class="form-control" type="email" name="email" placeholder="EMAIL" required />
+    <textarea class="form-control" name="message" placeholder="MESSAGE" rows="5" required></textarea>
+
+    <button type="submit" class="submit-button">SEND</button>
+  </form>
+
+  <div id="success-message" style="display:none">MESSAGE SENT.</div>
+</div>
+
+<script>
+  if (window.location.search.includes('success=true')) {
+    const form = document.querySelector('.contact-form') as HTMLElement | null;
+    const msg = document.getElementById('success-message');
+    if (form) form.style.display = 'none';
+    if (msg) msg.style.display = 'block';
+  }
+</script>

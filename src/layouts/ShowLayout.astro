@@ -1,0 +1,32 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import '../styles/shows.css';
+
+interface Props {
+  title: string;
+  poster: string;
+  accentColor?: string;
+  bgColor?: string;
+  posterWidth?: string;
+  posterWidthMobile?: string;
+}
+
+const {
+  title,
+  poster,
+  accentColor = '#907241',
+  bgColor = '#070707',
+  posterWidth = '66%',
+  posterWidthMobile = '50%',
+} = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Fragment slot="head">
+    <style set:html={`:root { --show-accent: ${accentColor}; --show-bg: ${bgColor}; --poster-width: ${posterWidth}; --poster-width-mobile: ${posterWidthMobile}; }`}></style>
+  </Fragment>
+  <img class="poster" src={poster} alt={title} />
+  <div style="text-align: center;">
+    <slot />
+  </div>
+</BaseLayout>
