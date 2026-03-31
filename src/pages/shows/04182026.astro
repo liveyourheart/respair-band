@@ -1,0 +1,41 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout title="04-18-2026" poster="/shows/04182026.jpg" accentColor="#7FA99A" bgColor="#131A11" posterWidth="33%" posterWidthMobile="50%">
+  <BandBlock
+    name="lowheaven"
+    links={[
+      { label: 'Bandcamp', url: 'https://lowheavenband.bandcamp.com/album/ritual-decay' },
+      { label: 'Instagram', url: 'https://www.instagram.com/lowheavenband/' },
+    ]}
+  />
+  <BandBlock
+    name="DROSERA"
+    links={[
+      { label: 'Bandcamp', url: 'https://drosera.bandcamp.com/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/droserafl/' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Website', url: '/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock
+    name="itallhappenedinjuly"
+    links={[
+      { label: 'Bandcamp', url: 'https://itallhappenedinjuly.bandcamp.com/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/itallhappenedinjuly/' },
+    ]}
+  />
+  <BandBlock
+    name="Venue"
+    links={[
+      { label: '89th Street OKC', url: 'https://www.89thstreetokc.com' },
+    ]}
+  />
+</ShowLayout>

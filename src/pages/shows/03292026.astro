@@ -1,0 +1,47 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout title="03-29-2026" poster="/shows/03292026.png" accentColor="#FFFEFF" bgColor="#010101" posterWidth="33%" posterWidthMobile="50%">
+  <BandBlock
+    name="BUGNOG"
+    links={[
+      { label: 'Bandcamp', url: 'https://bugnog.bandcamp.com/album/american-dreamed' },
+      { label: 'Instagram', url: 'https://www.instagram.com/bugnogband/?hl=en' },
+    ]}
+  />
+  <BandBlock
+    name="ECTOSPIRE"
+    links={[
+      { label: 'Linktree', url: 'https://linktr.ee/ectospiredeath' },
+      { label: 'Instagram', url: 'https://www.instagram.com/ectospire' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Website', url: '/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock
+    name="MY WITCH MY BLOOD"
+    links={[
+      { label: 'Bandcamp', url: 'https://mwmbdoom.bandcamp.com/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/mwmbdoom/' },
+    ]}
+  />
+  <BandBlock
+    name="Resonant Head"
+    links={[
+      { label: 'resonanthead.com', url: 'https://www.resonanthead.com/' },
+    ]}
+  />
+  <BandBlock
+    name="Tickets"
+    links={[
+      { label: 'Prekindle', url: 'https://www.prekindle.com/event/63983-bugnog-ectospire-mywitchmyblood-respair-oklahoma-city' },
+    ]}
+  />
+</ShowLayout>

@@ -1,0 +1,39 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout title="05-16-2026" poster="/shows/05162026.jpg" accentColor="#FFFEFF" bgColor="#010101" posterWidth="33%" posterWidthMobile="50%">
+  <BandBlock
+    name="MY SWEETEST KILL"
+    subtitle="Cheap Science Fiction Album Release"
+    links={[
+      { label: 'mysweetestkill.com', url: 'https://mysweetestkill.com/home' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Website', url: '/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock
+    name="COMMANDER PILOT"
+    links={[
+      { label: 'Linktree', url: 'https://linktr.ee/commanderpilot' },
+    ]}
+  />
+  <BandBlock
+    name="Resonant Head"
+    links={[
+      { label: 'resonanthead.com', url: 'https://www.resonanthead.com/' },
+    ]}
+  />
+  <BandBlock
+    name="Tickets"
+    links={[
+      { label: 'Prekindle', url: 'https://www.prekindle.com/promo/id/-2852852648496939853' },
+    ]}
+  />
+</ShowLayout>

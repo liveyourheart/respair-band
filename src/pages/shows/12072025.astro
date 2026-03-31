@@ -1,0 +1,47 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout title="12-07-2025" poster="/shows/12072025.png" posterWidth="33%" posterWidthMobile="50%">
+  <BandBlock
+    name="NATURALIST"
+    links={[
+      { label: 'Bandcamp', url: 'https://naturalistmusic.bandcamp.com/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/naturalistmusic/' },
+    ]}
+  />
+  <BandBlock
+    name="SPEAK, MEMORY"
+    links={[
+      { label: 'speakmemoryok.com', url: 'https://speakmemoryok.com/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/speakmemoryok/' },
+    ]}
+  />
+  <BandBlock
+    name="EARTHFUCKER"
+    subtitle="Oklahoma Crust Revival"
+    links={[
+      { label: 'Bandcamp', url: 'https://earthfucker420.bandcamp.com/album/why-should-you-survive' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Bandcamp', url: 'https://amomentofrespair.bandcamp.com/album/demo-2025-2' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock
+    name="The Pet Shop"
+    links={[
+      { label: 'thepetshopokc.com', url: 'https://www.thepetshopokc.com/' },
+    ]}
+  />
+  <BandBlock
+    name="Can't Make The Show?"
+    links={[
+      { label: 'Donate to the Oklahoma City Homeless Alliance directly', url: 'https://www.homelessalliance.org/donate' },
+    ]}
+  />
+</ShowLayout>
