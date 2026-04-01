@@ -4,6 +4,7 @@ import '../styles/shows.css';
 
 interface Props {
   title: string;
+  description?: string;
   poster: string;
   accentColor?: string;
   bgColor?: string;
@@ -13,6 +14,7 @@ interface Props {
 
 const {
   title,
+  description,
   poster,
   accentColor = '#907241',
   bgColor = '#070707',
@@ -21,7 +23,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description}>
   <Fragment slot="head">
     <style set:html={`:root { --show-accent: ${accentColor}; --show-bg: ${bgColor}; --poster-width: ${posterWidth}; --poster-width-mobile: ${posterWidthMobile}; }`}></style>
   </Fragment>
