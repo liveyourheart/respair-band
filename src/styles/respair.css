@@ -1,16 +1,28 @@
+/* JSL Blackletter font — file dropped into public/fonts/ when available.
+   Arial Black is the visible fallback until then. */
+@font-face {
+  font-family: 'JSL Blackletter';
+  src: url('/fonts/JSLBlackletter.woff2') format('woff2'),
+       url('/fonts/JSLBlackletter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
     margin-bottom: 50px;
     background-color: #070707;
 }
+
 h1 {
     color: #774F17;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
     margin-bottom: 10px;
 }
 
 h2 {
     color: #774F17;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
     font-size: 0.8em;
     display: block;
     margin-left: auto;
@@ -19,8 +31,8 @@ h2 {
 
 .show-link {
     display: block;
-
 }
+
 .shows {
     font-size: 150%;
     text-align: center;
@@ -30,12 +42,14 @@ h2 {
 a {
     color: #774F17;
 }
+
 .logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
 }
+
 .link-container {
     display: flex;
     flex-direction: row;
@@ -44,6 +58,7 @@ a {
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
+
 .link-img {
     padding: 10px;
     font-size: 30px;
@@ -57,6 +72,89 @@ a {
 #youtube {
     margin-top: 10px;
 }
+
+/* Tab navigation */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 10px 0 30px;
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
+    font-size: 1.3em;
+}
+
+.tab-nav a {
+    color: #444;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tab-nav a.active {
+    color: #774F17;
+}
+
+/* Tab sections — hidden by default; JS shows the active one */
+.tab-section {
+    display: none;
+    text-align: center;
+}
+
+/* Band tab */
+.band-bio {
+    color: #aaa;
+    font-size: 1em;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    text-align: left;
+}
+
+.band-benefit {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Press tab */
+.press-quote {
+    font-style: italic;
+    font-size: 1.05em;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 6px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.press-attribution {
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
+    font-size: 0.9em;
+    color: #774F17;
+    max-width: 500px;
+    margin: 0 auto 24px;
+    text-align: left;
+}
+
+.press-item {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.press-pending {
+    color: #444;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Contact tab */
+.contact-email {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
 .contact-form input,
 .contact-form textarea {
     display: block;
@@ -83,13 +181,14 @@ a {
     color: #070707;
     border: none;
     padding: 10px 30px;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
+    font-size: 1em;
     cursor: pointer;
 }
 
 #success-message {
     color: #774F17;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
     text-align: center;
     font-size: 1.2em;
     margin: 20px auto;
@@ -113,24 +212,33 @@ a {
     h2 {
         font-size: 0.7em;
     }
+
     .shows {
         font-size: 100%;
     }
+
     .logo {
         width: 100%;
     }
-    .link-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    .tab-nav {
+        font-size: 1.1em;
+        gap: 20px;
     }
+
+    .link-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .link-img {
-          width: 50%;
-          margin-top: 15px;
-          margin-bottom: 15px;
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
