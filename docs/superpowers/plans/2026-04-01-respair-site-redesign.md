@@ -938,6 +938,8 @@ git commit -m "feat: add meta descriptions to all show pages"
 
 ## Post-Launch Checklist (not in this repo)
 
+- [ ] Generate a new Web3Forms access key for respair.band and update `accessKey` in `src/pages/index.astro` (currently using the key from the Destin for Dirt site)
+
 These items are out of scope for this implementation but must happen around launch:
 
 - [ ] Set up 301 redirect: `destinedfordirt.com/respair/` → `respair.band`
@@ -948,5 +950,5 @@ These items are out of scope for this implementation but must happen around laun
 - [x] Podcast link — Killing Time Podcast by Kill Murray, linked at `t=1712s`
 - [ ] Replace EPK `press-pending` span with `<a class="press-item" href="/press/epk.pdf">EPK</a>` and drop PDF into `public/press/`
 - [ ] Replace One Sheet `press-pending` span with `<a class="press-item" href="/press/one-sheet.pdf">One Sheet</a>` and drop PDF into `public/press/`
-- [ ] Replace KOH placeholder URL with actual article URL
+- [x] KOH article URL — https://keepoklahomaheavy.substack.com/p/respair-the-return-of-hope
 - [ ] Review Bandcamp tags (outside this repo)

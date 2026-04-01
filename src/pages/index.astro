@@ -23,12 +23,18 @@ import '../styles/respair.css';
     ]}
   />
 
+  <hr class="divider" />
+  <hr class="divider" />
+
   <nav class="tab-nav">
     <a href="#band">Band</a>
     <a href="#shows">Shows</a>
     <a href="#press">Press</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <hr class="divider" />
+  <hr class="divider" />
 
   <!-- BAND -->
   <div id="tab-band" class="tab-section">
@@ -47,7 +53,7 @@ import '../styles/respair.css';
       <a class="show-link" href="/shows/05162026/">05/16/2026 - OKC - Resonant Head</a><br />
       <h2>Past Shows</h2>
       <a class="show-link" href="/shows/03292026/">03/29/2026 - OKC - Resonant Head</a><br />
-      <a class="show-link" href="/shows/01242026/">01/24/2026 - OKC - Resonant Head</a><br />
+      <span class="show-link" style="text-decoration: line-through; color: #555;">01/24/2026 - OKC - Resonant Head</span> <span style="color: #555; font-size: 0.7em;">rescheduled due to weather</span><br />
       <a class="show-link" href="/shows/12072025/">12/07/2025 - OKC - The Pet Shop</a><br />
       <a class="show-link" href="/shows/08162025/">08/16/2025 - OKC - Hooligan's</a><br />
     </div>
@@ -57,8 +63,7 @@ import '../styles/respair.css';
   <div id="tab-press" class="tab-section">
     <p class="press-quote">"Everything you're missing in your collection, and your life… reminiscent of From Ashes Rise, Tragedy, Remains of the Day, and early Neurosis."</p>
     <p class="press-attribution">
-      <!-- TODO: replace href with actual Keep Oklahoma Heavy article URL -->
-      — <a href="https://keepoklahomahevy.com" target="_blank" rel="noopener">Keep Oklahoma Heavy</a>
+      — <a href="https://keepoklahomaheavy.substack.com/p/respair-the-return-of-hope" target="_blank" rel="noopener">Keep Oklahoma Heavy</a>
     </p>
     <a class="press-item" href="http://youtube.com/watch?v=8F3NsEcNXrY&t=1712s" target="_blank" rel="noopener">Killing Time Podcast — Kill Murray</a>
     <!-- EPK: replace press-pending span with <a class="press-item" href="/press/epk.pdf">EPK</a> when file is ready -->
@@ -66,7 +71,7 @@ import '../styles/respair.css';
     <!-- One sheet: replace press-pending span with <a class="press-item" href="/press/one-sheet.pdf">One Sheet</a> when file is ready -->
     <span class="press-pending">One Sheet coming soon</span>
     <p style="margin-top: 20px;">
-      Press inquiries: <a href="mailto:amomentofrespair@gmail.com">amomentofrespair@gmail.com</a>
+      <a href="#contact" class="tab-link-contact">Contact us</a>
     </p>
   </div>
 
@@ -101,8 +106,8 @@ import '../styles/respair.css';
   const hash = window.location.hash.slice(1);
   activateTab(validTabs.includes(hash) ? hash : 'band');
 
-  // Tab clicks
-  document.querySelectorAll('.tab-nav a').forEach((link) => {
+  // Tab clicks and in-page tab links
+  document.querySelectorAll('.tab-nav a, .tab-link-contact').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const name = (link as HTMLAnchorElement).getAttribute('href')!.slice(1);

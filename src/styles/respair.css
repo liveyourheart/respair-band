@@ -2,7 +2,7 @@
    Arial Black is the visible fallback until then. */
 @font-face {
   font-family: 'JSL Blackletter';
-  src: url('/fonts/JSLBlackletter.woff2') format('woff2'),
+  src: url('/fonts/JBLACK.TTF') format('truetype'),
        url('/fonts/JSLBlackletter.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -47,7 +47,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 85%;
 }
 
 .link-container {
@@ -57,6 +57,9 @@ a {
     margin-top: 20px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .link-img {
@@ -73,14 +76,22 @@ a {
     margin-top: 10px;
 }
 
+/* Divider */
+.divider {
+    border: none;
+    border-top: 3px solid #774F17;
+    width: 100%;
+    margin: 10px 0;
+}
+
 /* Tab navigation */
 .tab-nav {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin: 10px 0 30px;
+    margin: 30px 0 20px;
     font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
-    font-size: 1.3em;
+    font-size: 4em;
 }
 
 .tab-nav a {
@@ -222,23 +233,33 @@ a {
     }
 
     .tab-nav {
-        font-size: 1.1em;
-        gap: 20px;
+        font-size: 1.6em;
+        gap: 24px;
+        flex-wrap: wrap;
     }
 
     .link-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+        gap: 20px;
+    }
+
+    .link-container a:nth-child(3) {
+        grid-column: 1 / -1;
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
     }
 
     .link-img {
-        width: 50%;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        width: 64px;
+        padding: 4px;
+        margin: 0 auto;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+    }
+
+    .press-quote,
+    .press-attribution {
+        max-width: 85vw;
     }
 }
