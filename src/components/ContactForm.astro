@@ -31,5 +31,15 @@ const activeKey = import.meta.env.DEV ? TEST_KEY : accessKey;
     const msg = document.getElementById('success-message');
     if (form) form.style.display = 'none';
     if (msg) msg.style.display = 'block';
+
+    // Activate the contact tab so the success message is visible
+    const contactSection = document.getElementById('tab-contact');
+    const contactLink = document.querySelector('.tab-nav a[href="#contact"]');
+    document.querySelectorAll('.tab-section').forEach((s) => {
+      (s as HTMLElement).style.display = 'none';
+    });
+    document.querySelectorAll('.tab-nav a').forEach((a) => a.classList.remove('active'));
+    if (contactSection) contactSection.style.display = 'block';
+    if (contactLink) contactLink.classList.add('active');
   }
 </script>

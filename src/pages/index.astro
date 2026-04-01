@@ -11,7 +11,8 @@ import '../styles/respair.css';
   ogImage="https://respair.band/images/preview.png"
   ogUrl="https://respair.band/"
 >
-  <img class="logo" src="/images/website-logo.png" />
+  <img class="logo" src="/images/website-logo.png" alt="Respair" />
+
   <StreamingLinks
     links={[
       { url: 'https://music.apple.com/us/album/demo-2025-ep/1858472615', icon: '/images/apple-logo.png', id: 'apple' },
@@ -21,18 +22,60 @@ import '../styles/respair.css';
       { url: 'https://www.youtube.com/watch?v=Ki7e_ppGh44&list=OLAK5uy_kQSh49Otdft_VY4WZcnLhAJBl191pep9A', icon: '/images/youtube.png', id: 'youtube' },
     ]}
   />
-  <div class="shows">
-    <h1>SHOWS</h1>
-    <a class="show-link" href="/shows/04182026/">04/18/2026 - OKC - 89th Street</a><br />
-    <a class="show-link" href="/shows/05162026/">05/16/2026 - OKC - Resonant Head</a><br />
-    <h2>Past Shows</h2>
-    <a class="show-link" href="/shows/03292026/">03/29/2026 - OKC - Resonant Head</a><br />
-    <a class="show-link" href="/shows/12072025/">12/07/2025 - OKC - The Pet Shop</a><br />
-    <a class="show-link" href="/shows/08162025/">08/16/2025 - OKC - Hooligan's</a><br />
+
+  <nav class="tab-nav">
+    <a href="#band">Band</a>
+    <a href="#shows">Shows</a>
+    <a href="#press">Press</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- BAND -->
+  <div id="tab-band" class="tab-section">
+    <p class="band-bio">
+      <!-- Bio pending — Sean and Richard are working on it. Replace this comment with the bio paragraph when delivered. -->
+    </p>
+    <p class="band-benefit">Respair has performed benefit shows for The Homeless Alliance and Pivot OKC.</p>
+    <!-- Band photo: add <img> here when available -->
   </div>
 
-  <div class="shows">
-    <h1>CONTACT</h1>
+  <!-- SHOWS -->
+  <div id="tab-shows" class="tab-section">
+    <div class="shows">
+      <h1>Shows</h1>
+      <a class="show-link" href="/shows/04182026/">04/18/2026 - OKC - 89th Street</a><br />
+      <a class="show-link" href="/shows/05162026/">05/16/2026 - OKC - Resonant Head</a><br />
+      <h2>Past Shows</h2>
+      <a class="show-link" href="/shows/03292026/">03/29/2026 - OKC - Resonant Head</a><br />
+      <a class="show-link" href="/shows/01242026/">01/24/2026 - OKC - Resonant Head</a><br />
+      <a class="show-link" href="/shows/12072025/">12/07/2025 - OKC - The Pet Shop</a><br />
+      <a class="show-link" href="/shows/08162025/">08/16/2025 - OKC - Hooligan's</a><br />
+    </div>
+  </div>
+
+  <!-- PRESS -->
+  <div id="tab-press" class="tab-section">
+    <p class="press-quote">"Everything you're missing in your collection, and your life… reminiscent of From Ashes Rise, Tragedy, Remains of the Day, and early Neurosis."</p>
+    <p class="press-attribution">
+      <!-- TODO: replace href with actual Keep Oklahoma Heavy article URL -->
+      — <a href="https://keepoklahomahevy.com" target="_blank" rel="noopener">Keep Oklahoma Heavy</a>
+    </p>
+    <!-- Podcast mention: replace this comment with a link when the podcast is identified -->
+    <span class="press-pending">Podcast mention coming soon</span>
+    <!-- EPK: replace press-pending span with <a class="press-item" href="/press/epk.pdf">EPK</a> when file is ready -->
+    <span class="press-pending">EPK coming soon</span>
+    <!-- One sheet: replace press-pending span with <a class="press-item" href="/press/one-sheet.pdf">One Sheet</a> when file is ready -->
+    <span class="press-pending">One Sheet coming soon</span>
+    <p style="margin-top: 20px;">
+      Press inquiries: <a href="mailto:amomentofrespair@gmail.com">amomentofrespair@gmail.com</a>
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="tab-contact" class="tab-section">
+    <div class="contact-email">
+      <a href="mailto:amomentofrespair@gmail.com">amomentofrespair@gmail.com</a>
+    </div>
     <ContactForm
       accessKey="ea1405d3-0166-499a-9525-23b9e3b14187"
       subject="Respair Contact"
@@ -40,3 +83,38 @@ import '../styles/respair.css';
     />
   </div>
 </BaseLayout>
+
+<script>
+  const validTabs = ['band', 'shows', 'press', 'contact'];
+
+  function activateTab(name: string) {
+    document.querySelectorAll('.tab-section').forEach((s) => {
+      (s as HTMLElement).style.display = 'none';
+    });
+    document.querySelectorAll('.tab-nav a').forEach((a) => a.classList.remove('active'));
+    const section = document.getElementById('tab-' + name);
+    const link = document.querySelector(`.tab-nav a[href="#${name}"]`);
+    if (section) section.style.display = 'block';
+    if (link) link.classList.add('active');
+  }
+
+  // Activate on load
+  const hash = window.location.hash.slice(1);
+  activateTab(validTabs.includes(hash) ? hash : 'band');
+
+  // Tab clicks
+  document.querySelectorAll('.tab-nav a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = (link as HTMLAnchorElement).getAttribute('href')!.slice(1);
+      history.pushState(null, '', '#' + name);
+      activateTab(name);
+    });
+  });
+
+  // Browser back/forward
+  window.addEventListener('popstate', () => {
+    const h = window.location.hash.slice(1);
+    activateTab(validTabs.includes(h) ? h : 'band');
+  });
+</script>
