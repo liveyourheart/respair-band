@@ -23,7 +23,7 @@ h1 {
 h2 {
     color: #774F17;
     font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
-    font-size: 0.8em;
+    font-size: 1.2em;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -113,7 +113,7 @@ a {
 /* Band tab */
 .band-bio {
     color: #aaa;
-    font-size: 1em;
+    font-size: 1.3em;
     line-height: 1.7;
     max-width: 500px;
     margin: 0 auto 20px;
@@ -122,14 +122,14 @@ a {
 
 .band-benefit {
     color: #888;
-    font-size: 0.9em;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
 /* Press tab */
 .press-quote {
     font-style: italic;
-    font-size: 1.05em;
+    font-size: 1.3em;
     color: #ccc;
     max-width: 500px;
     margin: 0 auto 6px;
@@ -139,7 +139,7 @@ a {
 
 .press-attribution {
     font-family: 'JSL Blackletter', 'Arial Black', sans-serif;
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: #774F17;
     max-width: 500px;
     margin: 0 auto 24px;
@@ -149,7 +149,7 @@ a {
 .press-item {
     display: block;
     margin-bottom: 8px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .press-pending {
@@ -217,11 +217,11 @@ a {
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     h2 {
-        font-size: 0.7em;
+        font-size: 1.3em;
     }
 
     .shows {
