@@ -945,7 +945,7 @@ These items are out of scope for this implementation but must happen around laun
 - [ ] Drop in JSL Blackletter font files (`public/fonts/JSLBlackletter.woff2` and `.ttf`) — no code change needed, `@font-face` is already declared
 - [ ] Replace bio placeholder comment in `index.astro` Band tab with actual copy from Sean and Richard
 - [ ] Add band photo `<img>` in Band tab when available
-- [ ] Replace podcast `press-pending` span with actual link when identified
+- [x] Podcast link — Killing Time Podcast by Kill Murray, linked at `t=1712s`
 - [ ] Replace EPK `press-pending` span with `<a class="press-item" href="/press/epk.pdf">EPK</a>` and drop PDF into `public/press/`
 - [ ] Replace One Sheet `press-pending` span with `<a class="press-item" href="/press/one-sheet.pdf">One Sheet</a>` and drop PDF into `public/press/`
 - [ ] Replace KOH placeholder URL with actual article URL

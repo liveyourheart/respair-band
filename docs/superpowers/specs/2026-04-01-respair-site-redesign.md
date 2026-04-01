@@ -53,7 +53,7 @@ Unchanged from the current build. Existing current/past show split, existing lin
 
 ### Press
 - **Pull quote** — "Everything you're missing in your collection, and your life… reminiscent of From Ashes Rise, Tragedy, Remains of the Day, and early Neurosis." Attributed to Keep Oklahoma Heavy with a link to their site.
-- **Podcast mention** — placeholder until the podcast is identified.
+- **Podcast mention** — Killing Time Podcast by Kill Murray, linked to YouTube at the timestamped segment (`t=1712s`).
 - **EPK** — PDF hosted at `public/press/epk.pdf`. Rendered as "EPK — coming soon" (plain text, no link) until the file is dropped in and the link is activated in code.
 - **One Sheet** — PDF hosted at `public/press/one-sheet.pdf`. Same approach.
 - **Press email** — `amomentofrespair@gmail.com` as a visible `mailto:` link.
@@ -100,7 +100,7 @@ Unchanged from the current build. Existing current/past show split, existing lin
 | Press quote | Ready |
 | Bio | In progress — Sean + Richard |
 | Band photo | TBD |
-| Podcast mention | TBD — to be identified |
+| Podcast mention | Ready — Killing Time Podcast by Kill Murray |
 | EPK (PDF) | In progress |
 | One Sheet (PDF) | In progress |
 | JSL Blackletter font file | To be dropped in post-launch |
