@@ -44,16 +44,7 @@ import '../styles/respair.css';
 
   <!-- SHOWS -->
   <div id="tab-shows" class="tab-section">
-    <div class="shows">
-      <h1>Upcoming</h1>
-      <a class="show-link" href="/shows/04182026/">04/18/2026 - OKC - 89th Street</a><br />
-      <a class="show-link" href="/shows/05162026/">05/16/2026 - OKC - Resonant Head</a><br />
-      <h2>Past Shows</h2>
-      <a class="show-link" href="/shows/03292026/">03/29/2026 - OKC - Resonant Head</a><br />
-      <span style="text-decoration: line-through; color: #555;">01/24/2026 - OKC - Resonant Head</span><br /><span style="color: #555; font-size: 0.7em; display: block; margin-top: 2px; margin-bottom: 10px;">rescheduled due to weather</span>
-      <a class="show-link" href="/shows/12072025/">12/07/2025 - OKC - The Pet Shop</a><br />
-      <a class="show-link" href="/shows/08162025/">08/16/2025 - OKC - Hooligan's</a><br />
-    </div>
+    <div class="shows" id="shows-list"></div>
   </div>
 
   <!-- PRESS -->
@@ -85,6 +76,59 @@ import '../styles/respair.css';
 </BaseLayout>
 
 <script>
+  // To add a show: push an entry to this array. slug matches the filename in src/pages/shows/.
+  // Set slug to null for cancelled/postponed shows (renders as strikethrough + note).
+  const shows = [
+    { date: '2026-05-16', slug: '05162026', display: '05/16/2026 — OKC — Resonant Head' },
+    { date: '2026-04-18', slug: '04182026', display: '04/18/2026 — OKC — 89th Street' },
+    { date: '2026-03-29', slug: '03292026', display: '03/29/2026 — OKC — Resonant Head' },
+    { date: '2026-01-24', slug: null as string | null, display: '01/24/2026 — OKC — Resonant Head', note: 'rescheduled due to weather' },
+    { date: '2025-12-07', slug: '12072025', display: '12/07/2025 — OKC — The Pet Shop' },
+    { date: '2025-08-16', slug: '08162025', display: "08/16/2025 — OKC — Hooligan's" },
+  ];
+
+  function renderShows() {
+    const container = document.getElementById('shows-list');
+    if (!container) return;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const toDate = (s: typeof shows[0]) => new Date(s.date + 'T00:00:00');
+
+    const upcoming = shows
+      .filter(s => toDate(s) >= today)
+      .sort((a, b) => toDate(a).getTime() - toDate(b).getTime());
+
+    const past = shows
+      .filter(s => toDate(s) < today)
+      .sort((a, b) => toDate(b).getTime() - toDate(a).getTime());
+
+    const showEntry = (s: typeof shows[0]) => {
+      if (s.slug) {
+        return `<a class="show-link" href="/shows/${s.slug}/">${s.display}</a><br />`;
+      }
+      let out = `<span style="text-decoration: line-through; color: #555;">${s.display}</span><br />`;
+      if (s.note) out += `<span style="color: #555; font-size: 0.7em; display: block; margin-top: 2px; margin-bottom: 10px;">${s.note}</span>`;
+      return out;
+    };
+
+    let html = '';
+
+    if (upcoming.length > 0) {
+      html += '<h1>Upcoming</h1>' + upcoming.map(showEntry).join('');
+    } else {
+      html += '<p style="color: #555;">No upcoming shows. Check back soon.</p>';
+    }
+
+    if (past.length > 0) {
+      html += '<h2>Past Shows</h2>' + past.map(showEntry).join('');
+    }
+
+    container.innerHTML = html;
+  }
+
+  renderShows();
+
   const validTabs = ['band', 'shows', 'press', 'contact'];
 
   function activateTab(name: string) {
