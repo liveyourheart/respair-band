@@ -59,6 +59,7 @@ import '../styles/respair.css';
 
   <!-- PRESS -->
   <div id="tab-press" class="tab-section">
+    <img class="press-photo" src="/images/press.jpg" alt="Respair" />
     <p class="press-quote">"Everything you're missing in your collection, and your life… reminiscent of From Ashes Rise, Tragedy, Remains of the Day, and early Neurosis."</p>
     <p class="press-attribution">
       — <a href="https://keepoklahomaheavy.substack.com" target="_blank" rel="noopener">Keep Oklahoma Heavy</a>
@@ -124,6 +125,11 @@ import '../styles/respair.css';
     };
 
     let html = '';
+
+    const nextShow = upcoming.find(s => s.slug);
+    if (nextShow) {
+      html += `<a href="/shows/${nextShow.slug}/"><img class="next-show-poster" src="/shows/${nextShow.slug}.jpg" alt="${nextShow.display}" /></a>`;
+    }
 
     if (upcoming.length > 0) {
       html += '<h1>Upcoming</h1>' + upcoming.map(showEntry).join('');
