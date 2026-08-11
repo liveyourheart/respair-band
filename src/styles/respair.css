@@ -256,6 +256,10 @@ a {
         max-width: 85vw;
     }
 
+    .press-photo {
+        width: 80%;
+    }
+
     body {
         font-size: 100%;
         margin-bottom: 30px;
