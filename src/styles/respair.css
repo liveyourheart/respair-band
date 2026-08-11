@@ -12,6 +12,9 @@
 body {
     margin-bottom: 50px;
     background-color: #070707;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -111,10 +114,14 @@ a {
 }
 
 /* Band tab */
+.band-content {
+    padding: 0 16px;
+}
+
 .band-photo {
     display: block;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto 24px;
     border: 3px solid #774F17;
 }
@@ -125,12 +132,17 @@ a {
     height: auto;
 }
 
+.band-bio-block {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .band-bio {
     color: #aaa;
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: 1.7;
-    max-width: 500px;
-    margin: 0 auto 20px;
+    margin: 0 0 16px;
     text-align: left;
 }
 
