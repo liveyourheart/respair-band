@@ -1,0 +1,58 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout
+  title="09-24-2026"
+  description="Respair with The Callous Daoboys, kaonashi, Girl of Glass, and Wielded Steel at 89th Street, Oklahoma City — September 24, 2026."
+  poster="/shows/09242026.png"
+  accentColor="#c9a63e"
+  bgColor="#0d0d0a"
+  posterWidth="40%"
+  posterWidthMobile="85%"
+>
+  <BandBlock
+    name="THE CALLOUS DAOBOYS"
+    links={[
+      { label: 'Bandcamp', url: 'https://thecallousdaoboys.bandcamp.com' },
+      { label: 'Instagram', url: 'https://www.instagram.com/thecallousdaoboys' },
+      { label: 'Facebook', url: 'https://www.facebook.com/thecallousdaoboys/' },
+    ]}
+  />
+  <BandBlock
+    name="KAONASHI"
+    links={[
+      { label: 'Bandcamp', url: 'https://kaonashipa.bandcamp.com' },
+      { label: 'Instagram', url: 'https://www.instagram.com/kaonashipa' },
+      { label: 'Facebook', url: 'https://www.facebook.com/kaonashipa' },
+    ]}
+  />
+  <BandBlock
+    name="GIRL OF GLASS"
+    links={[
+      { label: 'Bandcamp', url: 'https://girlofglass.bandcamp.com' },
+      { label: 'Instagram', url: 'https://www.instagram.com/girlofglass_dc/' },
+    ]}
+  />
+  <BandBlock
+    name="WIELDED STEEL"
+    links={[
+      { label: 'Bandcamp', url: 'https://wieldedsteel.bandcamp.com' },
+      { label: 'Instagram', url: 'https://www.instagram.com/wieldedsteel/' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Website', url: '/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock
+    name="89th Street — Oklahoma City, OK"
+    links={[
+      { label: '89thstreetokc.com', url: 'https://www.89thstreetokc.com' },
+    ]}
+  />
+</ShowLayout>
