@@ -1,0 +1,43 @@
+---
+import ShowLayout from '../../layouts/ShowLayout.astro';
+import BandBlock from '../../components/BandBlock.astro';
+---
+
+<ShowLayout
+  title="10-01-2026"
+  description="Respair with Bilong, Ivory Tusk, and Christbride at Opolis, Norman — October 1, 2026."
+  poster="/shows/10012026.png"
+  accentColor="#e2d29c"
+  bgColor="#0a0a0c"
+  posterWidth="40%"
+  posterWidthMobile="85%"
+>
+  <BandBlock name="BILONG" links={[]} />
+  <BandBlock
+    name="IVORY TUSK"
+    links={[
+      { label: 'Bandcamp', url: 'https://churchoftheivorytusk.bandcamp.com' },
+      { label: 'Instagram', url: 'https://www.instagram.com/churchoftheivorytusk/' },
+    ]}
+  />
+  <BandBlock
+    name="RESPAIR"
+    links={[
+      { label: 'Website', url: '/' },
+      { label: 'Instagram', url: 'https://www.instagram.com/a_moment_of_respair/' },
+    ]}
+  />
+  <BandBlock name="CHRISTBRIDE" links={[]} />
+  <BandBlock
+    name="Opolis — Norman, OK"
+    links={[
+      { label: 'opolis.org', url: 'https://www.opolis.org' },
+    ]}
+  />
+  <BandBlock
+    name="Tickets"
+    links={[
+      { label: '$8 // 113 N. Crawford // 7:00PM', url: '' },
+    ]}
+  />
+</ShowLayout>
